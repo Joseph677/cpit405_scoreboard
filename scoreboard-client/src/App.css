@@ -32,3 +32,9 @@ body {
 .error {
   color: #d32f2f;
 }
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

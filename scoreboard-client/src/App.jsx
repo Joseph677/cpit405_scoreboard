@@ -34,13 +34,22 @@ function App() {
   if (loading) return <div className="loading">Loading game data...</div>;
   if (error) return <div className="error">Error: {error}</div>;
 
+  const games = []
+  let index = 0
+  if(gameData) {
+    gameData.forEach((game) => {
+      games.push(<GameCard game={game} key={index}/>)
+      index = index + 1
+    })
+  }
+
   return (
     <div className="app">
       <header className="app-header">
         <h1>NBA Live Scoreboard</h1>
       </header>
       <main>
-        {gameData && <GameCard game={gameData} />}
+        {games}
       </main>
     </div>
   );
